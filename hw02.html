@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script type="text/javascript" src="Services2.js"></script>
+		<script type="text/javascript" src="HW2.js"></script>
+		<title></title>
+		<style>
+
+			#blue{
+				background-color:blue;
+
+				position:fixed;
+				margin: 10px 10px 10px 10px;
+				width: 50px;
+    			height: 50px;
+			}
+			#green{
+				background-color:green;
+				position:fixed;
+				margin: 60px 10px 10px 10px;
+				width: 50px;
+    			height: 50px;
+			}
+			#yellow{
+				background-color:yellow;
+				position:fixed;
+				margin: 60px 10px 10px 60px;
+				width: 50px;
+    			height: 50px;
+			}
+			#red{
+				background-color:red;
+				position:fixed;
+				margin: 10px 10px 10px 60px;
+				width: 50px;
+    			height: 50px;
+			}
+			.score{
+				position:fixed;
+				margin: 120px 0px 0px 100px;
+				}
+		</style>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="MyController as ctrl">
+			<!--<button ng-click="ctrl.addSimonColor()">click</button>--->
+				<!-- <div ng-repeat="color in ctrl.color track by $index" > -->
+
+					<div  ng-style="ctrl.userSelection=='blue'? {'opacity':1}:{'opacity':0.3}" 
+						  id='blue' 
+						  ng-click='ctrl.addClick("blue")' 
+						  style="cursor: pointer;" 
+						  ng-hide=''></div>
+
+					<div  ng-style="ctrl.userSelection=='green'? {'opacity':1}:{'opacity':0.3}" 
+					      id='green' 
+					      ng-click='ctrl.addClick("green")' 
+					      style="cursor: pointer;" ></div>
+
+					<div  ng-style="ctrl.userSelection=='yellow'? {'opacity':1}:{'opacity':0.3}" 
+						  id='yellow' 
+						  ng-click='ctrl.addClick("yellow")' 
+						  style="cursor: pointer;" ></div>
+
+					<div  ng-style="ctrl.userSelection=='red'? {'opacity':1}:{'opacity':0.3}" 
+						  id='red' 
+						  ng-click='ctrl.addClick("red")' 
+						  style="cursor: pointer;" ></div>
+
+				<!-- </div>	 -->
+				<label class='score'>Score:<span ng-bind='ctrl.score'></span></label>
+		</div>
+	</body>
+
+
+
+
+
+
+
+
+
+
+</html>
