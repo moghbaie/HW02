@@ -11,39 +11,45 @@
 
 				position:fixed;
 				margin: 10px 10px 10px 10px;
-				width: 50px;
-    			height: 50px;
+				width: 100px;
+    			height: 100px;
+    			box-shadow: 10px 10px 5px #888888;
 			}
 			#green{
 				background-color:green;
 				position:fixed;
-				margin: 60px 10px 10px 10px;
-				width: 50px;
-    			height: 50px;
+				margin: 120px 10px 10px 10px;
+				width: 100px;
+    			height: 100px;
+    			box-shadow: 10px 10px 5px #888888;
 			}
 			#yellow{
 				background-color:yellow;
 				position:fixed;
-				margin: 60px 10px 10px 60px;
-				width: 50px;
-    			height: 50px;
+				margin: 120px 10px 10px 120px;
+				width: 100px;
+    			height: 100px;
+    			box-shadow: 10px 10px 5px #888888;
 			}
 			#red{
 				background-color:red;
 				position:fixed;
-				margin: 10px 10px 10px 60px;
-				width: 50px;
-    			height: 50px;
+				margin: 10px 10px 10px 120px;
+				width: 100px;
+    			height: 100px;
+    			box-shadow: 10px 10px 5px #888888;
 			}
 			.score{
 				position:fixed;
-				margin: 120px 0px 0px 100px;
+				margin: 240px 0px 0px 200px;
+				font: 20px;
 				}
+			
 		</style>
 	</head>
-	<body ng-app="myApp">
+	<body ng-app="myApp" class="body">
 		<div ng-controller="MyController as ctrl">
-			<!--<button ng-click="ctrl.addSimonColor()">click</button>--->
+			<!--button ng-click="ctrl.addSimonColor()">click</button>
 				<!-- <div ng-repeat="color in ctrl.color track by $index" > -->
 
 					<div  ng-style="ctrl.userSelection=='blue'? {'opacity':1}:{'opacity':0.3}" 
@@ -71,14 +77,4 @@
 				<label class='score'>Score:<span ng-bind='ctrl.score'></span></label>
 		</div>
 	</body>
-
-
-
-
-
-
-
-
-
-
 </html>
