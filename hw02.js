@@ -1,30 +1,37 @@
-var myApp=angular.module('myApp', ['ServicesModule']);
+var myApp=angular.module('myApp', []);
 myApp.controller('MyController', function($scope, $timeout, $interval){
 	var self=this;
 	var myColors = ['red', 'green', 'yellow', 'blue'];
 	var simonColors = [];
 	var usercheck = [];
 	var usercolor = [];
+	self.userSelection=[];
+	
+	
 
 	function addSimonColor() {
 	 if(simonColors.length == usercheck.length){
 		var myRandomNumber = Math.floor(Math.random()*4);
 		var myRandomColor = myColors[myRandomNumber];
 		simonColors.push(myRandomColor);
-		self.userSelection=myRandomColor;
-		console.log(simonColors);
-		/*for (var i = 0; i < simonColors.length+1; i++) {
-			self.userSelection=simonColors[i];
-			console.log(self.userSelection);
-		};*/
 
+		loop=simonColors.length;
+		i=0;
+		var looper=function(){
+			if(i<loop){ self.userSelection=simonColors[i];
+				i++;
+				$timeout(looper,800)
+			}
+		}
+		$timeout(looper,1000)
+		console.log(simonColors);
 		}else{}
 	}
 
 
 	$interval(function(){ 
 		addSimonColor(); 
-	}, 2000);
+	}, 4000);
 
 
 	self.addClick=function(colorname){
